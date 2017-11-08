@@ -1,0 +1,32 @@
+\contentsline {section}{\numberline {1}Zahlensysteme}{3}
+\contentsline {subsection}{\numberline {1.1}Interpretation von Hexadezimalzahlen}{3}
+\contentsline {paragraph}{\nonumberline a)}{3}
+\contentsline {paragraph}{\nonumberline b)}{3}
+\contentsline {paragraph}{\nonumberline c)}{3}
+\contentsline {paragraph}{\nonumberline d)}{3}
+\contentsline {paragraph}{\nonumberline e)}{3}
+\contentsline {subsection}{\numberline {1.2}Umwandlung von Dezimalzahlen}{3}
+\contentsline {paragraph}{\nonumberline a)}{3}
+\contentsline {paragraph}{\nonumberline b)}{4}
+\contentsline {paragraph}{\nonumberline c)}{4}
+\contentsline {section}{\numberline {2}Gleitkommazahl in IEEE 754}{4}
+\contentsline {subsection}{\numberline {2.1}Umwandlung einer dezimalen Gleitkommazahl in eine hexadezimal codierte IEEE 754 Zahl}{4}
+\contentsline {paragraph}{\nonumberline 1.}{4}
+\contentsline {paragraph}{\nonumberline 2.}{4}
+\contentsline {paragraph}{\nonumberline 3.}{5}
+\contentsline {paragraph}{\nonumberline 4.}{5}
+\contentsline {paragraph}{\nonumberline 5.}{5}
+\contentsline {subsection}{\numberline {2.2}Umwandlung einer hexadezimal codierten IEEE 754 Zahl in eine dezimal codierte Gleitkommazahl}{5}
+\contentsline {section}{\numberline {3}Kommunikationsnetze, Restklassenrechnung und Huffman-Code}{5}
+\contentsline {subsection}{\numberline {3.1}Schichten in Kommunikationsnetzen}{5}
+\contentsline {paragraph}{\nonumberline 1.}{6}
+\contentsline {paragraph}{\nonumberline 2.}{6}
+\contentsline {paragraph}{\nonumberline 3.}{6}
+\contentsline {subsection}{\numberline {3.2}Polynom-Restklassenrechnung}{6}
+\contentsline {paragraph}{\nonumberline 1.}{6}
+\contentsline {paragraph}{\nonumberline 2.}{6}
+\contentsline {paragraph}{\nonumberline 3.}{6}
+\contentsline {subsection}{\numberline {3.3}Huffman-Code}{6}
+\contentsline {paragraph}{\nonumberline 1.}{7}
+\contentsline {paragraph}{\nonumberline 2.}{7}
+\contentsline {paragraph}{\nonumberline 3.}{7}
