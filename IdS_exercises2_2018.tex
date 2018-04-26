@@ -441,5 +441,38 @@ Wie viele Takte lang muss die Pipeline verzögert werden?
 Welche Beschleunigung wurde mit der Pipeline für diesen Code erreicht? Gehen Sie davon aus, dass für einen Takt mit Pipelining $200 ps$ benötigt werden. Ohne Pipelining dauert ein Takt $800 ps$.
 
 %----------------------------------------------------------------------------------------
+\section{Caches}
+\subsection{Cache-Design}
+
+\paragraph{1.}
+Geben Sie für beide Strategien die mittlere Zugriffszeit bei Leseanfragen in Abhängigkeit von Trefferrate $r_{h}$, Cache-Zugriffszeit $t_{C}$ und Arbeitsspeicher-Zugriffszeit $t_{M}$ an.
+
+\paragraph{2.}
+Wie groß muss die reduzierte Trefferrate $r'_{h}$ mindestens sein, damit die zweite Strategie besser ist?
+
+\paragraph{3.}
+Ist es sinnvoller, bei einem Direct-Mapped-Cache die höchstwertigen oder niedrigstwertigen Bits der Adresse als Index zu verwenden? Begründen Sie Ihre Antwort!
+
+%--------------------------------------------------
+\subsection{Cache}
+
+\paragraph{1.}
+Warum werden in Computern Caches verwendet?
+
+\paragraph{2.}
+Was ist der Unterschied zwischen direkt abgebildeten Caches und vollassoziativen Caches? Nennen Sie je einen Vorteil der beiden Varianten!
+
+\paragraph{3.}
+Nennen Sie drei mögliche, realistische Verdrängungsstrategien bei einem voll-assoziativem Cache.
+
+\paragraph{4.}
+Vervollständigen Sie die Tabelle 1 auf der nächsten Seite, die einen direkt abgebildeten Cache mit 4 Blöcken beschreibt.
+
+\begin{itemize}
+\item[a)] Geben Sie für jede Anfrage an, ob es zu einem Cache-Hit oder einem Cache-Miss kommt und tragen Sie ggf. neu in den Cache kommende Werte entsprechend ein!
+\item[b)] Setzen Sie an den entsprechenden Stellen das Dirty Bit und geben Sie an, wenn ein Wert aus dem Cache in den Arbeitsspeicher zurückgeschrieben werden muss!
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
 
 \end{document}
