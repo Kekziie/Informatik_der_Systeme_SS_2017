@@ -61,27 +61,17 @@
 \newpage
 
 %----------------------------------------------------------------------------------------
-
 \section{Zahlensysteme}
-
 \section{Interpretation von Hexadezimalzahlen}
-
 In den folgenden Tabelle sind in den ersten Spalten Zahlen im Hexadezimalsystem angegeben. Ergänzen Sie die folgende Tabelle von A)-E)! \\
 
-\paragraph{a)}
-Schreiben Sie die hexadezimale Zahl als binären String. Dabei soll der binäre String genauso viele Stellen besitzen, um jede zweistellige Hexadezimalzahl darstellen zu können. \\
-
-\paragraph{b)}
-Interpretieren Sie den binären String aus a) als vorzeichenlose Binärzahl. Geben Sie die Zahl im Dezimalsystem an. \\
-
-\paragraph{c)}
-Interpretieren Sie den binären String aus a) als Zweierkomplement. Geben Sie die Zahl im Dezimalsystem an. \\
-
-\paragraph{d)}
-Negieren Sie die Zahl aus c) und schreiben Sie diesen Wert als binären String im Zweierkomplement auf. \\
-
-\paragraph{e)}
-Schreiben Sie die Zahl aus c) als 16-stelligen binären String im Zweierkomplement aus. \\
+\begin{itemize}
+\item[a)] Schreiben Sie die hexadezimale Zahl als binären String. Dabei soll der binäre String genauso viele Stellen besitzen, um jede zweistellige Hexadezimalzahl darstellen zu können.
+\item[b)] Interpretieren Sie den binären String aus a) als vorzeichenlose Binärzahl. Geben Sie die Zahl im Dezimalsystem an.
+\item[c)] Interpretieren Sie den binären String aus a) als Zweierkomplement. Geben Sie die Zahl im Dezimalsystem an. 
+\item[d)] Negieren Sie die Zahl aus c) und schreiben Sie diesen Wert als binären String im Zweierkomplement auf. 
+\item[e)] Schreiben Sie die Zahl aus c) als 16-stelligen binären String im Zweierkomplement aus.
+\end{itemize}
 
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
@@ -209,7 +199,6 @@ Durch welche Technologie wird die IP-Zieladresse des Webservers vom anfragenden 
 Wie oben beschrieben wird das Datenpaket nun versendet. Erklären Sie kurz was mit dem Paket passiert.
 
 %--------------------------------------------------
-
 \subsection{Polynom-Restklassenrechnung}
 
 \paragraph{1.}
@@ -228,7 +217,6 @@ Welche Polynome sind durch u+1 teilbar? \\
 Können Sie eine einfache Regel aufstellen, anhand der man schnell entscheiden kann, ob ein Polynom durch u+1 teilbar ist? \\
 
 %--------------------------------------------------
-
 \subsection{Huffman-Code}
 Der Huffman-Code bietet eine Möglichkeit einen Code mit minimaler mittlerer Codewortlänge zu konstruieren. Es wird folgende Codiervorschrift angewandt: \\
 
@@ -258,5 +246,53 @@ Man gebe die Optimalcodierung des Zeichenalphabets mit Hilfe des Verfahrens von 
 
 \paragraph{3.}
 Wie groß ist die Coderedundanz $R_{c}$? Man vergleiche diesen Wert mit dem entsprechenden Wert für die Codierung mit einheitlicher Binärstellenzahl.
+
+%----------------------------------------------------------------------------------------
+\section{Code}
+\subsection{Linear systematischer Code}
+Bei einer digitalen Nachrichtenübertragung sollen mit einem linearen systematischen Code 2 Fehler erkannt und 1 Fehler sicher korrigiert werden können.
+
+\paragraph{1.}
+Bestimmen Sie die Code-Effizienz $\dfrac{m}{n} = f(k), k=1,2, ..., 12$ und stellen Sie diese graphisch dar. 
+
+\paragraph{2.}
+Geben Sie ein Prüfschema für eine Codierung mit $m = 11$ Nutzbits an!
+
+\paragraph{3.}
+Wie lauten die Kontrollstellen für das Codewort mit den Nachrichtenstellen 0110 1010 110?
+
+\paragraph{4.}
+Man gebe das Fehlersyndrom für folgende Fälle an:
+\begin{itemize}
+\item[a)] ein Fehler in Stelle $x_{4}$,
+\item[b)] je ein Fehler in den Stellen $x_{4}$ und $x_{9}$,
+\item[c)] je ein Fehler in den Stellen $x_{4}$,$x_{7}$ und $x_{9}$
+\end{itemize}
+
+%--------------------------------------------------
+\subsection{Binärer Gruppencode}
+Ein Gruppen-Code ist durch die folgenden drei Generatorworte definiert:
+
+$$G_{1}: 01100$$
+$$G_{2}: 10010$$
+$$G_{3}: 10101$$
+
+\begin{enumerate}
+\item Wie groß ist die Anzahl der Nutz- und Codeworte? Stellen Sie die Liste aller Nutzworte und Codeworte auf!
+\item Geben Sie die Gewichtsverteilung $A(w), w=0,1, ...,n$ dieses Codes an!
+\item Wie groß ist die Hamming Distanz h?
+\item Geben Sie ein Beispiel für ein vom Empfänger nicht als falsch erkennbares Fehlermuster $F_{n}$ an.
+\item Statt der Generatorworte $G_{1}, G_{2}, G_{3}$ sollen aus der Liste aller Codeworte aus Teilaufgabe 1) drei andere Codeworte als neue Generatorworte $G_{1}*, G_{2}*, G_{3}*$ so ausgewählt werden, dass sich die Nachrichtenstellen in den ersten Stellen der auf dieser Basis konstuierten Codeworte direkt wiederfinden. Wie lauten diese $G_{1}*, G_{2}*, G_{3}*$?
+\end{enumerate}
+
+%--------------------------------------------------
+\subsection{Restfehler bei Hamming-Codes}
+\begin{enumerate}
+\item Sei p die Bitfehlerwahrscheinlichkeit. Mit welcher Wahrscheinlichkeit wird eine Nachricht aus m Bits korrekt übertragen?
+\item Mit welcher Wahrscheinlichkeit tritt genau ein Bitfehler auf?
+\item Mit welcher Wahrscheinlichkeit wird ein n-stelliges Codewort eines Hamming-Codes korrekt empfangen oder kann korrekt korrigiert werden?
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
 
 \end{document}
