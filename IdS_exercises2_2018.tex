@@ -120,11 +120,8 @@ In der folgenden Tabelle sind in der ersten Spalte Zahlen im Dezimalsystem angeg
 \end{tabular}
 
 %----------------------------------------------------------------------------------------
-
 \section{Gleitkommazahl in IEEE 754 }
-
 \subsection{Umwandlung einer dezimalen Gleitkommazahl in eine hexadezimal codierte IEEE 754 Zahl}
-
 Der 16-Bit Gleitkommatyp binary16 des IEEE-Standards 754 verwendet 1 Bit für das Vorzeichen s, 5 Bit für den Exponenten E und 10 Bit um f, den expliziten Teil der Mantisse zu speichern. Codieren Sie die Zahl $X=\dfrac{1}{125}$ in diesem Format und stellen Sie den daraus resultierende Bitfolge als Hexadezimalzahl dar! \\
 
 \paragraph{1.}
@@ -272,21 +269,33 @@ $$G_{1}: 01100$$
 $$G_{2}: 10010$$
 $$G_{3}: 10101$$
 
-\begin{enumerate}
-\item Wie groß ist die Anzahl der Nutz- und Codeworte? Stellen Sie die Liste aller Nutzworte und Codeworte auf!
-\item Geben Sie die Gewichtsverteilung $A(w), w=0,1, ...,n$ dieses Codes an!
-\item Wie groß ist die Hamming Distanz h?
-\item Geben Sie ein Beispiel für ein vom Empfänger nicht als falsch erkennbares Fehlermuster $F_{n}$ an.
-\item Statt der Generatorworte $G_{1}, G_{2}, G_{3}$ sollen aus der Liste aller Codeworte aus Teilaufgabe 1) drei andere Codeworte als neue Generatorworte $G_{1}*, G_{2}*, G_{3}*$ so ausgewählt werden, dass sich die Nachrichtenstellen in den ersten Stellen der auf dieser Basis konstuierten Codeworte direkt wiederfinden. Wie lauten diese $G_{1}*, G_{2}*, G_{3}*$?
-\end{enumerate}
+\paragraph{1.}
+Wie groß ist die Anzahl der Nutz- und Codeworte? Stellen Sie die Liste aller Nutzworte und Codeworte auf!
+
+\paragraph{2.}
+Geben Sie die Gewichtsverteilung $A(w), w=0,1, ...,n$ dieses Codes an!
+
+\paragraph{3.}
+Wie groß ist die Hamming Distanz h?
+
+\paragraph{4.}
+Geben Sie ein Beispiel für ein vom Empfänger nicht als falsch erkennbares Fehlermuster $F_{n}$ an.
+
+\paragraph{5.}
+Statt der Generatorworte $G_{1}, G_{2}, G_{3}$ sollen aus der Liste aller Codeworte aus Teilaufgabe 1) drei andere Codeworte als neue Generatorworte $G_{1}*, G_{2}*, G_{3}*$ so ausgewählt werden, dass sich die Nachrichtenstellen in den ersten Stellen der auf dieser Basis konstuierten Codeworte direkt wiederfinden. Wie lauten diese $G_{1}*, G_{2}*, G_{3}*$?
+
 
 %--------------------------------------------------
 \subsection{Restfehler bei Hamming-Codes}
-\begin{enumerate}
-\item Sei p die Bitfehlerwahrscheinlichkeit. Mit welcher Wahrscheinlichkeit wird eine Nachricht aus m Bits korrekt übertragen?
-\item Mit welcher Wahrscheinlichkeit tritt genau ein Bitfehler auf?
-\item Mit welcher Wahrscheinlichkeit wird ein n-stelliges Codewort eines Hamming-Codes korrekt empfangen oder kann korrekt korrigiert werden?
-\end{enumerate}
+\paragraph{1.}
+Sei p die Bitfehlerwahrscheinlichkeit. Mit welcher Wahrscheinlichkeit wird eine Nachricht aus m Bits korrekt übertragen?
+
+\paragraph{2.}
+Mit welcher Wahrscheinlichkeit tritt genau ein Bitfehler auf?
+
+\paragraph{3.}
+Mit welcher Wahrscheinlichkeit wird ein n-stelliges Codewort eines Hamming-Codes korrekt empfangen oder kann korrekt korrigiert werden?
+
 
 %----------------------------------------------------------------------------------------
 
