@@ -173,5 +173,90 @@ Welche dezimale Gleitkommazahl stellt $BCDE_{16}$ dar, wenn man IEEE 754 Codieru
 $X=BCDE_{16}$ \\
 $BCDE_{16} \rightarrow$ 1011 1100 1101 111$0_{2}$ \\
 
+%----------------------------------------------------------------------------------------
+
+\section{Kommunikationsnetze, Restklassenrechnung und Huffman-Code}
+
+\subsection{Schichten in Kommunikationsnetzen}
+Ein Host in einem WLAN-Netz fragt über HTTP/ TCP/ IP bei einem Webserver eine Webseite an. Das Datenpaket wird von diesem Host über ein WLAN-Netz an einen IP-Router gesendet, der dieses über ein Ethernet-Netz an einen Switch und von dort aus an den Web-Server weiterleitet. \\
+
+\paragraph{1.}
+Zu welchen Schichten des ISO/OSI-Schichtenmodells gehören die Protokolle HTTP, TCP, IP, WLAN und Ethernet? Recherchieren Sie dazu im Internet! \\
+
+Sieben-Schichtenmodell: \\
+\begin{tabular}{|c|c|}
+\hline
+7 Application & Anwendung \\
+\hline
+6 Presentation & Darstellung \\
+\hline
+5 Session & Kommunikationssteuerung \\
+\hline
+4 Transport & Transport \\
+\hline
+3 Network & Vermittlung \\
+\hline
+2 Data Link & Sicherung \\
+\hline
+1 Physical & Bitübertragung\\
+\hline
+\end{tabular}
+
+\paragraph{2.}
+Durch welche Technologie wird die IP-Zieladresse des Webservers vom anfragenden Host ermittelt? \\
+
+\paragraph{3.}
+Wie oben beschrieben wird das Datenpaket nun versendet. Erklären Sie kurz was mit dem Paket passiert.
+
+%--------------------------------------------------
+
+\subsection{Polynom-Restklassenrechnung}
+
+\paragraph{1.}
+Überprüfen Sie, ob die folgenden Polynome primitiv sind:
+
+\begin{center}
+$g_{1}(u)=u^{4}+u^{3}+1$ \\
+$g_{2}(u)=u^{4}+u^{2}+u+1$ \\
+$g_{3}(u)=u^{4}+u^{3}+u+1$ \\
+\end{center}
+
+\paragraph{2.}
+Welche Polynome sind durch u+1 teilbar? \\
+
+\paragraph{3.}
+Können Sie eine einfache Regel aufstellen, anhand der man schnell entscheiden kann, ob ein Polynom durch u+1 teilbar ist? \\
+
+%--------------------------------------------------
+
+\subsection{Huffman-Code}
+Der Huffman-Code bietet eine Möglichkeit einen Code mit minimaler mittlerer Codewortlänge zu konstruieren. Es wird folgende Codiervorschrift angewandt: \\
+
+1. Die Zeichen einer Quelle werden in einer Tabelle nach fallenden Auftrittswahrscheinlichkeiten aufgelistet und die Auftrittswahrscheinlichkeiten werden eingetragen. \\
+2. Die beiden kleinstwahrscheinlichen Zeichen x,y werden zur Unterscheidung mit 0 und 1 codiert und in der Tabelle entsprechend gekennzeichnet. \\
+3. Die beiden Zeichen x und y werden zu einem neuen Zeichen xy zusammengefasst. Dem neuen Zeichen wird die Summe der Wahrscheinlichkeiten der beiden ursprünglichen Zeichen zugeordnet. Die so entstehende Quelle hat ein Zeichen weniger. Falls die neue Quelle nur noch ein Zeichen enthält, fährt man mit Schritt 4 fort, sonst wiederholt man den Algorithmus ab Schritt 1 mit der neuen Quelle. \\
+4. Man beginnt mit der letzten Tabelle, arbeitet sich bis zur ersten Tabelle vor und stellt den Codebaum auf. Pro Tabelle erhält man eine Codierentscheidung, d.h. zwei Zweige des Codebaumes. Die Endknoten liefern die gewünschte Codierung. \\
+
+Das Zeichenalphabet einer Nachrichtenquelle umfasste 7 Zeichen $x_{1}, ..., x_{7}$, die mit folgenden Wahrscheinlichkeiten auftreten: 
+
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|c|}
+\hline
+$x_{i}$ & $x_{1}$ & $x_{2}$ & $x_{3}$ & $x_{4}$ & $x_{5}$ & $x_{6}$ & $x_{7}$ \\
+\hline
+$p(x_{i})$ & 0,10 & 0,30 & 0,10 & 0,10 & 0,15 & 0,10 & 0,15 \\
+\hline
+\end{tabular}
+\end{center}
+\\
+
+\paragraph{1.}
+Wie groß ist der Informationsgehalt H* der Nachrichtenquelle? \\
+
+\paragraph{2.}
+Man gebe die Optimalcodierung des Zeichenalphabets mit Hilfe des Verfahrens von Huffman an! \\
+
+\paragraph{3.}
+Wie groß ist die Coderedundanz $R_{c}$? Man vergleiche diesen Wert mit dem entsprechenden Wert für die Codierung mit einheitlicher Binärstellenzahl.
 
 \end{document}
