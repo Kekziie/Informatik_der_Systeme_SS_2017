@@ -284,7 +284,6 @@ Geben Sie ein Beispiel für ein vom Empfänger nicht als falsch erkennbares Fehl
 \paragraph{5.}
 Statt der Generatorworte $G_{1}, G_{2}, G_{3}$ sollen aus der Liste aller Codeworte aus Teilaufgabe 1) drei andere Codeworte als neue Generatorworte $G_{1}*, G_{2}*, G_{3}*$ so ausgewählt werden, dass sich die Nachrichtenstellen in den ersten Stellen der auf dieser Basis konstuierten Codeworte direkt wiederfinden. Wie lauten diese $G_{1}*, G_{2}*, G_{3}*$?
 
-
 %--------------------------------------------------
 \subsection{Restfehler bei Hamming-Codes}
 \paragraph{1.}
@@ -296,6 +295,69 @@ Mit welcher Wahrscheinlichkeit tritt genau ein Bitfehler auf?
 \paragraph{3.}
 Mit welcher Wahrscheinlichkeit wird ein n-stelliges Codewort eines Hamming-Codes korrekt empfangen oder kann korrekt korrigiert werden?
 
+%----------------------------------------------------------------------------------------
+\section{Code und CPU}
+\subsection{Zyklischer Code}
+Für einen zyklischen Code ist folgendes Generatorpolynom vorgegeben:
+$$G(u)=u^{4}+u^{2}+u+1=10111$$
+
+\paragraph{1.}
+Bestimmen Sie die Periode dieses Generatorpolynoms!
+
+\paragraph{2.}
+Wie groß ist die Zahl m der Nutzbits des entsprechenden zyklischen Codes?
+
+\paragraph{3.}
+Ermitteln Sie die Prüfstellen für folgendes Nutzwort 001!
+
+\paragraph{4.}
+Zerlegen Sie $G(u)$ in seine primitiven Teiler!
+
+\paragraph{5.}
+Um was für einen Code handelt es sich also?
+
+%--------------------------------------------------
+\subsection{Taktrate, ISA und CPU-Zeit}
+Im Folgenden wir der Zusammenhang zwischen Taktrate, ISA und CPU-Zeit vertieft.
+
+\paragraph{1.}
+Ein Rechner A mit einer Taktrate von $2GHz$ benötigt für die Ausführung eines Programms 9 Sekunden. Wie viele Taktzyklen hat er dabei ausgeführt?
+
+\paragraph{2.}
+Rechner B hat für speziell das oben betrachtete Programm einen um $25 \%$ höheren $CPI_{eff}$ verglichen mit Rechner A. Welche Taktrate benötigt B, damit er dasselbe Programm mit einer Laufzeit von 6 Sekunden abarbeiten kann.
+
+\paragraph{3.}
+Wie viel mal schneller ist dann Rechner B als Rechner A?
+
+%--------------------------------------------------
+\subsection{CPU Instruktion und Laufzeit}
+Die in einem Programm verwendeten Befehle sind in Tabelle 1 aufgelistet. Die Tabelle enthält die Häufigkeit und die CPI der einzelnen Befehle, welche im Programm vorkommen.
+
+\underline{Tabelle 1}
+Häufigkeiten und CPI von Befehlen eines Programms
+\begin{tabular}{c|c|c}
+Instruktion & Häufigkeit & CPI \\
+\hline
+ALU & $50 \%$ & 1 \\
+\hline
+Load & $20 \%$ & 5 \\
+\hline
+Store & $10 \%$ & 3 \\
+\hline
+Branch & $20 \%$ & 2 \\
+\end{tabular}
+
+\paragraph{1.}
+Berechnen Sie die effektive CPI für das Programm.
+
+\paragraph{2.}
+Wie viel schneller würde das Programm laufen, wenn ein besser Daten-Cache die durchschnittliche Ladezeit auf 2 CPI reduziert?
+
+\paragraph{3.}
+Wie viel schneller würde das Programm laufen. wenn eine verbesserte Sprungvorhersage die CPI für den Branch-Befehl um eins verringert?
+
+\paragraph{4.}
+Angenommen zwei ALU Instruktionen können gleichzeitig ausgeführt werden. Wie viel schneller würde das Programm laufen?
 
 %----------------------------------------------------------------------------------------
 
