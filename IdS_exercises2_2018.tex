@@ -128,15 +128,49 @@ Der 16-Bit Gleitkommatyp binary16 des IEEE-Standards 754 verwendet 1 Bit für da
 Bringen Sie die Zahl X in das Format $X=(-1)^{s}*(1+f)*2^{e}$ mit $s \epsilon \{0,1 \}$, $e \epsilon \mathbb{Z}$, $B=15$, $E=e+B$, $E \epsilon \mathbb{N}$ und $0 \leqslant f < 1$! \\
 
 $X=\dfrac{1}{125}=0,008$ \\
-da X positiv, s=0 \\
+
+s=0, da Zahl X positiv und s hat 1 Bit \\
+
+$E = e+B \rightarrow E=-7+(2^{r}-1) = 8_{10} $ \\
+
+$f=\dfrac{x}{2^{-7}}-1 = \dfrac{0,008}{2^{-7}}-1= 0,024_{10} $
+
+$X=(-1)^{0}*(1+0,024)*2^{-7}$
 
 \paragraph{2.}
 Ermitteln Sie die Repräsentation für s,E und f in Binärschreibweise! \\
+
+$0,008*2= 0,016 \rightarrow 0$ \\
+$0,016*2= 0,032 \rightarrow 0$ \\
+
+$0,032*2= 0,064 \rightarrow 0$ \\
+$0,064*2= 0,128 \rightarrow 0$ \\
+$0,128*2= 0,256 \rightarrow 0$ \\
+$0,256*2= 0,512 \rightarrow 0$ \\
+$0,512*2= 1,024 \rightarrow 1$ \\
+
+$1,024*2= 0,048 \rightarrow 0$ \\
+$0,048*2= 0,096 \rightarrow 0$ \\
+$0,096*2= 0,192 \rightarrow 0$ \\
+$0,192*2= 0,384 \rightarrow 0$ \\
+$0,384*2= 0,768 \rightarrow 0$ \\
+$0,768*2= 1,536 \rightarrow 1$ \\
+$1,536*2= 1,072 \rightarrow 1$ \\
+$1,072*2= 0,144 \rightarrow 0$ \\
+$0,144*2= 0,288 \rightarrow 0$ \\
+$0,288*2= 0,576 \rightarrow 0$ \\
+
+s=0, da Zahl X positiv und s hat 1 Bit \\
+
+$E = 8_{10} \rightarrow 01000_{2}$ \\
+
+$f = 0,024_{10} \rightarrow f=0000 0110 00_{2}$
 
 \paragraph{3.}
 Fügen Sie die 16 Bit in der richtigen Reihenfolge zusammen! \\
 
 Reihenfolge: Sign Bit, Exponent, Mantisse \\
+0010 0000 0001 100$0_{2}$
 
 \paragraph{4.}
 Warum ist die im Standard vorgeschriebene Reihenfolge sinnvoller als andere Anordnungsmöglichkeiten? \\
@@ -145,6 +179,7 @@ lexikalische Ordnung $\rightarrow$ Vergleichsoperationen effizient durchführbar
 
 \paragraph{5.}
 Geben Sie die ermittelte Bitfolge in (kompakter) hexadezimaler Darstellung an! \\
+0010 0000 0001 100$0_{2} \rightarrow$ 0x2018
 
 %--------------------------------------------------
 
@@ -154,6 +189,12 @@ Welche dezimale Gleitkommazahl stellt $BCDE_{16}$ dar, wenn man IEEE 754 Codieru
 
 $X=BCDE_{16}$ \\
 $BCDE_{16} \rightarrow$ 1011 1100 1101 111$0_{2}$ \\
+s=1, da zahl X negativ\\
+$E= 01111_{2} \rightarrow 15_{10}$ \\
+$e=E-B=15-(2^{4}-1) \rightarrow e=0$ \\
+$2^{-3}+2^{-4}+2^{-6}+2^{-7}+2^{-8} \approx 0,2168$ \\
+$(-1)^{1}*(1+ 0,2168)*2^{0} = -1,2168$ \\
+$ \rightarrow -1,217{10}$
 
 %----------------------------------------------------------------------------------------
 
