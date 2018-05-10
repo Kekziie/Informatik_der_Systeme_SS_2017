@@ -194,63 +194,131 @@ $E= 01111_{2} \rightarrow 15_{10}$ \\
 $e=E-B=15-(2^{4}-1) \rightarrow e=0$ \\
 $2^{-3}+2^{-4}+2^{-6}+2^{-7}+2^{-8} \approx 0,2168$ \\
 $(-1)^{1}*(1+ 0,2168)*2^{0} = -1,2168$ \\
-$ \rightarrow -1,217{10}$
+$ \rightarrow -1,217_{10}$
 
 %----------------------------------------------------------------------------------------
 
-\section{Kommunikationsnetze, Restklassenrechnung und Huffman-Code}
-
-\subsection{Schichten in Kommunikationsnetzen}
+\section{Schichten in Kommunikationsnetzen}
 Ein Host in einem WLAN-Netz fragt über HTTP/ TCP/ IP bei einem Webserver eine Webseite an. Das Datenpaket wird von diesem Host über ein WLAN-Netz an einen IP-Router gesendet, der dieses über ein Ethernet-Netz an einen Switch und von dort aus an den Web-Server weiterleitet. \\
 
 \paragraph{1.}
 Zu welchen Schichten des ISO/OSI-Schichtenmodells gehören die Protokolle HTTP, TCP, IP, WLAN und Ethernet? Recherchieren Sie dazu im Internet! \\
 
-Sieben-Schichtenmodell: \\
-\begin{tabular}{|c|c|}
-\hline
-7 Application & Anwendung \\
-\hline
-6 Presentation & Darstellung \\
-\hline
-5 Session & Kommunikationssteuerung \\
-\hline
-4 Transport & Transport \\
-\hline
-3 Network & Vermittlung \\
-\hline
-2 Data Link & Sicherung \\
-\hline
-1 Physical & Bitübertragung\\
-\hline
-\end{tabular}
+\begin{itemize}
+\item HTTP $\rightarrow$ Schicht 5-7
+\item TCP $\rightarrow$ Schicht 4 (Transport)
+\item IP $\rightarrow$ Schicht 3 (Network)
+\item WLAN und Ethernet $\rightarrow$ Schicht 2 (Data Link)
+\end{itemize}
 
 \paragraph{2.}
 Durch welche Technologie wird die IP-Zieladresse des Webservers vom anfragenden Host ermittelt? \\
 
+DNS $\rightarrow$ das Domain Name System
+
 \paragraph{3.}
 Wie oben beschrieben wird das Datenpaket nun versendet. Erklären Sie kurz was mit dem Paket passiert.
 
+\begin{itemize}
+\item rot $\rightarrow$ Ethernet
+\item blau $\rightarrow$ IP Header
+\item grün $\rightarrow$ TCP Header
+\item weiß $\rightarrow$ HTTP
+\item gelb $\rightarrow$ Wlan
+\end{itemize}
+
+Paket mit Applikation, TCP Header und IP Header wird per WLAN zum Router gesendet. Anhand der IP Adresse wird das Paket per Ethernet vom Router zu einem Switch geleitet. Der Switch liest IP und leitet das Paket per Ethernet an den Zielport weiter. Wenn das Paket an der Ziel IP angekommen ist, wird anhand des TCP-Headers die gestückelten Paketdaten wieder zusammengesetzt.
+
 %--------------------------------------------------
-\subsection{Polynom-Restklassenrechnung}
+
+\section{Binärer Gruppencode}
+Ein Gruppen-Code ist durch die folgenden drei Generatorworte definiert:
+
+$$G_{1}: 01100$$
+$$G_{2}: 10010$$
+$$G_{3}: 10101$$
 
 \paragraph{1.}
-Überprüfen Sie, ob die folgenden Polynome primitiv sind:
+Wie groß ist die Anzahl der Nutz- und Codeworte? Stellen Sie die Liste aller Nutzworte und Codeworte auf! \\
 
-\begin{center}
-$g_{1}(u)=u^{4}+u^{3}+1$ \\
-$g_{2}(u)=u^{4}+u^{2}+u+1$ \\
-$g_{3}(u)=u^{4}+u^{3}+u+1$ \\
-\end{center}
+\begin{tabular}{|c|c|c||c|}
+\hline
+$G_{1}$ & $G_{2}$ & $G_{3}$ & Codedeworte \\
+\hline
+0 & 0 & 0 & 00000 \\
+\hline
+0 & 0 & 1 & 10101 \\
+\hline
+0 & 1 & 0 & 10010 \\
+\hline
+0 & 1 & 1 & 00111 \\
+\hline
+1 & 0 & 0 & 01100 \\
+\hline
+1 & 0 & 1 & 11001 \\
+\hline
+1 & 1 & 0 & 11110 \\
+\hline
+1 & 1 & 1 & 01011 \\
+\hline
+\end{tabular}
 
 \paragraph{2.}
-Welche Polynome sind durch u+1 teilbar? \\
+Geben Sie die Gewichtsverteilung $A(w), w=0,1, ...,n$ dieses Codes an! \\
+
+\begin{tabular}{|c||c|c|c|c|c|c|}
+\hline
+w & 0 & 1 & 2 & 3 & 4 & 5 \\
+\hline
+A(w) & 1 & 0 & 2 & 4 & 1 & 0 \\
+\hline
+\end{tabular}
 
 \paragraph{3.}
-Können Sie eine einfache Regel aufstellen, anhand der man schnell entscheiden kann, ob ein Polynom durch u+1 teilbar ist? \\
+Wie groß ist die Hamming-Distanz h? \\
+
+Die Hamming-Distanz h beträgt 2.
+
+\paragraph{4.}
+Geben Sie ein Beispiel für ein vom Empfänger nicht als falsch erkennbares Fehlermuster $F_{n}$ an. \\
+
+00000 \\
+$F_{n}$=10010 \\
+
+kann kein Fehler sein, da Fehlermuster einem Codewort entspricht
+
+\paragraph{5.}
+Statt der Generatorworte $G_{1}, G_{2}, G_{3}$ sollen aus der Liste aller Codeworte aus Teilaufgabe 1) drei andere Codeworte als neue Generatorworte $G_{1}*, G_{2}*, G_{3}*$ so ausgewählt werden, dass sich die Nachrichtenstellen in den ersten Stellen der auf dieser Basis konstuierten Codeworte direkt wiederfinden. Wie lauten diese $G_{1}*, G_{2}*, G_{3}*$?
+
+$$G_{1}*: 10010$$
+$$G_{2}*: 01011$$
+$$G_{3}*: 00111$$
+
+\begin{tabular}{|c|c|c||c|}
+\hline
+$G_{1}*$ & $G_{2}*$ & $G_{3}*$ & Codedeworte \\
+\hline
+0 & 0 & 0 & 00000 \\
+\hline
+0 & 0 & 1 & 00111 \\
+\hline
+0 & 1 & 0 & 01011 \\
+\hline
+0 & 1 & 1 & 01100 \\
+\hline
+1 & 0 & 0 & 10010 \\
+\hline
+1 & 0 & 1 & 10101 \\
+\hline
+1 & 1 & 0 & 11001 \\
+\hline
+1 & 1 & 1 & 11110 \\
+\hline
+\end{tabular}
 
 %--------------------------------------------------
-\subsection{Huffman-Code}
+
+\section{Huffman-Code}
 Der Huffman-Code bietet eine Möglichkeit einen Code mit minimaler mittlerer Codewortlänge zu konstruieren. Es wird folgende Codiervorschrift angewandt: \\
 
 1. Die Zeichen einer Quelle werden in einer Tabelle nach fallenden Auftrittswahrscheinlichkeiten aufgelistet und die Auftrittswahrscheinlichkeiten werden eingetragen. \\
@@ -261,11 +329,11 @@ Der Huffman-Code bietet eine Möglichkeit einen Code mit minimaler mittlerer Cod
 Das Zeichenalphabet einer Nachrichtenquelle umfasste 7 Zeichen $x_{1}, ..., x_{7}$, die mit folgenden Wahrscheinlichkeiten auftreten: 
 
 \begin{center}
-\begin{tabular}{|c||c|c|c|c|c|c|c|}
+\begin{tabular}{|c||c|c|c|c|c|c|}
 \hline
-$x_{i}$ & $x_{1}$ & $x_{2}$ & $x_{3}$ & $x_{4}$ & $x_{5}$ & $x_{6}$ & $x_{7}$ \\
+$x_{i}$ & $x_{1}$ & $x_{2}$ & $x_{3}$ & $x_{4}$ & $x_{5}$ & $x_{6}$\\
 \hline
-$p(x_{i})$ & 0,10 & 0,30 & 0,10 & 0,10 & 0,15 & 0,10 & 0,15 \\
+$p(x_{i})$ & 0,10 & 0,28 & 0,32 & 0,05 & 0,16 & 0,09 \\
 \hline
 \end{tabular}
 \end{center}
@@ -274,11 +342,105 @@ $p(x_{i})$ & 0,10 & 0,30 & 0,10 & 0,10 & 0,15 & 0,10 & 0,15 \\
 \paragraph{1.}
 Wie groß ist der Informationsgehalt H* der Nachrichtenquelle? \\
 
+$$H* = \sum^{N}_{n=1} p(x_{i})*ld( \dfrac{1}{p(x_{i})})$$
+
+$x_{1} = 0,10 * ld(\dfrac{1}{0,10})\approx 0,332$ \\
+$x_{2} = 0,28 * ld(\dfrac{1}{0,28})\approx 0,514$ \\
+$x_{3} = 0,32 * ld(\dfrac{1}{0,32})\approx 0,526$ \\
+$x_{4} = 0,05 * ld(\dfrac{1}{0,05})\approx 0,216$ \\
+$x_{5} = 0,16 * ld(\dfrac{1}{0,16})\approx 0,423$ \\
+$x_{6} = 0,09 * ld(\dfrac{1}{0,09})\approx 0,313$ \\
+
+Der Informationsgehalt H* beträgt $2,324$ bit.
+
 \paragraph{2.}
 Man gebe die Optimalcodierung des Zeichenalphabets mit Hilfe des Verfahrens von Huffman an! \\
 
+\begin{tabular}{|c||c|c|c|c|c|c|}
+\hline
+$x_{i}$ & $x_{1}$ & $x_{2}$ & $x_{3}$ & $x_{4}$ & $x_{5}$ & $x_{6}$\\
+\hline
+$p(x_{i})$ & 0,10 & 0,28 & 0,32 & 0,05 & 0,16 & 0,09 \\
+\hline
+\end{tabular}
+
+\underline{Schritt 1}: \\
+Sortieren nach Auftrittswahrscheinlichkeit
+
+\begin{tabular}{|c||c|c|c|c|c|c|}
+\hline
+$x_{i}$ & $x_{3}$ & $x_{2}$ & $x_{5}$ & $x_{1}$ & $x_{6}$ & $x_{4}$\\
+\hline
+$p(x_{i})$ & 0,32 & 0,28 & 0,16 & 0,10 & 0,09 & 0,05 \\
+\hline
+\end{tabular}
+
+\underline{Schritt 2}: \\
+Zusammenfassen
+
+\begin{tabular}{|c||c|c|c|}
+\hline
+$x_{i}$ & $x_{3}$  $x_{2}$ & $x_{5}$  $x_{1}$ & $x_{6}$  $x_{4}$\\
+\hline
+$p(x_{i})$ & 0,6 & 0,26 & 0,14 \\
+\hline
+\end{tabular}
+
+\underline{Schritt 3}: \\
+Weiteres Zusammenfassen
+
+
+
+\begin{tabular}{|c||c|c|}
+\hline
+$x_{i}$ & $x_{3}$  $x_{2}$ & $x_{5}$  $x_{1}$ $x_{6}$  $x_{4}$\\
+\hline
+$p(x_{i})$ & 0,6 & 0,4 \\
+\hline
+\end{tabular}
+
+\begin{figure}[h!]
+\centering
+\ovalbox{
+\begin{tikzpicture}[level/.style={sibling distance=60mm/#1}]
+\node [circle,draw] (z){$1$}
+  child {node [circle,draw] (a) {$0.6$}
+    child {node (b) {$x_{3}$}}
+    child {node (g) {$x_{2}$}}
+  }
+  child {node [circle,draw] (j) {$0.4$}
+    child {node [circle,draw] (k) {$0.26$}
+      child {node (b) {$x_{5}$}}
+      child {node (b) {$x_{1}$}}
+    }
+    child {node [circle,draw] (l) {$0.14$}
+      child {node (b) {$x_{6}$}}
+      child {node (b) {$x_{4}$}}
+    }
+};
+
+\end{tikzpicture}}
+\caption{je linker Zweig 0; rechter Zweig 1 \\
+         Codierung: $x_{1}:101;x_{2}:01;x_{3}:00;x_{4}:111;x_{5}:100;x_{6}:110$}
+\end{figure}
+
+\newpage
+
 \paragraph{3.}
-Wie groß ist die Coderedundanz $R_{c}$? Man vergleiche diesen Wert mit dem entsprechenden Wert für die Codierung mit einheitlicher Binärstellenzahl.
+Wie groß ist die Coderedundanz $R_{c}$? Man vergleiche diesen Wert mit dem entsprechenden Wert für die Codierung mit einheitlicher Binärstellenzahl. 
+$$S_{m} = \sum^{N}_{1} S_{i}*p(x_{i})$$
+$$H* = 2,324 bit$$
+$$R_{c} = S_{m} - H*$$
+
+Coderedundanz bei einheitlicher Binärcodierung: \\
+$S_{m} = 3*(0,10+0,28+0,32+0,05+0,16+0,09) = 3 bit$ \\
+$R_{c} = 3 - 2,324 = 0,676 $ \\
+
+Coderedundanz für unserer Huffman Codierung \\
+$S_{m} = 2*(0,28+0,32)+3*(0,10+0,05+0,16+0,09) = 2,4 bit$ \\
+$R_{c} = 2,4 - 2,324 = 0,076 $ \\
+
+Die Coderedundanz bei unserer Huffman Codierung ist eindeutig kleiner $0,076 \ll 0,676$ als bei der einheitlichen Binärcodierung.
 
 %----------------------------------------------------------------------------------------
 \section{Code}
